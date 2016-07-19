@@ -82,15 +82,19 @@
         is: 'latest-posts',
 
         properties: {
-          posts: {
-            type: Array,
-            observer: '_postsChanged'
-          },
+          posts: Array,
           _posts: Array
         },
 
+        observers: [
+          '_postsChanged(posts.splices)'
+        ],
+
         _postsChanged: function () {
-          let temp = this.posts.slice(0, 2);
+          if (!this.posts.length) {return;}
+          let rawPosts = this.posts;
+          rawPosts.sort(function(a, b){return a.$key-b.$key});
+          let temp = rawPosts.slice(rawPosts.length-2,rawPosts.length).reverse();
           for (let i = 0, len = temp.length; i < len; i++) {
             temp[i].url = '/blog/posts/' + temp[i].id + '/';
           }
