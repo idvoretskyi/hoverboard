@@ -207,6 +207,7 @@
 
         _getSession: function (sessionId, day, schedule) {
           var session = this.sessions[sessionId];
+          if (!session) {return;}
           session.mainTag = session.tags ? session.tags[0] : 'General';
 
           if (day.tags.indexOf(session.mainTag) < 0) {
