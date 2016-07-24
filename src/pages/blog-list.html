@@ -154,9 +154,8 @@
         _postsChanged: function () {
           if (this.posts.length <= 1) {return;}
           let rawPosts = this.posts;
-          rawPosts.sort(function(a, b){return a.$key-b.$key});
-          let temp = rawPosts.reverse();
-          this._posts = temp;
+          rawPosts.sort(function(a, b){return new Date(b.posted) - new Date(a.posted);});
+          this._posts = rawPosts;
         },
 
         _updateCascadedNodes() {

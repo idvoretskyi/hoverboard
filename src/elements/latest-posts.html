@@ -96,9 +96,9 @@
 
         _postsChanged: function () {
           if (!this.posts.length) {return;}
-          let rawPosts = this.posts;
-          rawPosts.sort(function(a, b){return a.$key-b.$key});
-          let temp = rawPosts.slice(rawPosts.length-2,rawPosts.length).reverse();
+          var rawPosts = this.posts;
+          rawPosts.sort(function(a, b){return new Date(b.posted) - new Date(a.posted);});
+          var temp = rawPosts.slice(0,2);
           for (let i = 0, len = temp.length; i < len; i++) {
             temp[i].url = '/blog/posts/' + temp[i].id + '/';
           }
