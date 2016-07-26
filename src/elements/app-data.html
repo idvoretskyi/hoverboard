@@ -3,6 +3,10 @@
 <link rel="import" href="../../bower_components/polymerfire/firebase-document.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../behaviors/app-localize-behavior.html">
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
+
+
 
 <dom-module id="app-data">
   <template>
@@ -11,60 +15,109 @@
       id="querySpeakers"
       app-name="hoverboard-dev"
       path="/speakers"
-      data="{{_speakersRaw}}">
+      data="{{_firebaseSpeakersRaw}}">
     </firebase-document>
+
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="speakers"
+      data="{{_firebaseSpeakersRaw}}"
+      persisted-data="{{_speakersRaw}}">
+    </app-indexeddb-mirror>
 
     <firebase-document
       id="querySessions"
       app-name="hoverboard-dev"
       path="/sessions"
-      data="{{sessions}}">
+      data="{{_firebaseSessions}}">
     </firebase-document>
+
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="sessions"
+      data="{{_firebaseSessions}}"
+      persisted-data="{{sessions}}">
+    </app-indexeddb-mirror>
 
     <firebase-document
       id="querySchedule"
       app-name="hoverboard-dev"
       path="/schedule"
-      data="{{_scheduleRaw}}">
+      data="{{_firebaseSchedule}}">
     </firebase-document>
+
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="schedule"
+      data="{{_firebaseSchedule}}"
+      persisted-data="{{_scheduleRaw}}">
+    </app-indexeddb-mirror>
 
     <firebase-query
       id="queryPosts"
       app-name="hoverboard-dev"
       path="/blog"
-      data="{{posts}}"
+      data="{{_firebasePosts}}"
       order-by-key>
     </firebase-query>
+
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="blog"
+      data="{{_firebasePosts}}"
+      persisted-data="{{posts}}">
+    </app-indexeddb-mirror>
 
     <firebase-document
       id="queryPartners"
       app-name="hoverboard-dev"
       path="/partners"
-      data="{{app.partners}}">
+      data="{{_firebasePartners}}">
     </firebase-document>
+
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="partners"
+      data="{{_firebasePartners}}"
+      persisted-data="{{app.partners}}">
+    </app-indexeddb-mirror>
 
    <firebase-document
       id="queryTeam"
       app-name="hoverboard-dev"
       path="/team"
-      data="{{app.team}}">
+      data="{{_firebaseTeam}}">
    </firebase-document>
+
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="team"
+      data="{{_firebaseTeam}}"
+      persisted-data="{{app.team}}">
+    </app-indexeddb-mirror>
 
     <firebase-document
       id="queryVideos"
       app-name="hoverboard-dev"
       path="/videos"
-      data="{{app.videos}}">
+      data="{{_firebaseVideos}}">
     </firebase-document>
 
-    <firebase-document
-      id="queryConfig"
-      app-name="hoverboard-dev"
-      path="/config"
-      data="{{app.data}}">
-    </firebase-document>
+    <app-indexeddb-mirror
+      session="dfua2016"
+      key="videos"
+      data="{{_firebaseVideos}}"
+      persisted-data="{{app.videos}}">
+    </app-indexeddb-mirror>
 
-    <!--<iron-ajax auto url="[[configSource]]" handle-as="json" last-response="{{app.data}}"></iron-ajax>-->
+    <!--<firebase-document-->
+      <!--id="queryConfig"-->
+      <!--app-name="hoverboard-dev"-->
+      <!--path="/config"-->
+      <!--data="{{app.data}}">-->
+    <!--</firebase-document>-->
+
+    <iron-ajax auto url="[[configSource]]" handle-as="json" last-response="{{app.data}}"></iron-ajax>
     <!--<iron-ajax auto url="[[speakersSource]]" handle-as="json" last-response="{{_speakersRaw}}"></iron-ajax>-->
     <!--<iron-ajax auto url="[[sessionsSource]]" handle-as="json" last-response="{{sessions}}"></iron-ajax>-->
     <!--<iron-ajax auto url="[[postsSource]]" handle-as="json" on-response="_reversePosts"></iron-ajax>-->
@@ -129,7 +182,16 @@
             type: Array,
             notify: true
           },
+
+          _firebasePosts: {
+            type: Array,
+            notify: true
+          },
           partners: {
+            type: Array,
+            notify: true
+          },
+          _firebasePartners: {
             type: Array,
             notify: true
           },
@@ -141,7 +203,17 @@
             type: Array,
             notify: true
           },
+
+          _firebaseVideos: {
+            type: Array,
+            notify: true
+          },
           team: {
+            type: Object,
+            notify: true
+          },
+
+          _firebaseTeam: {
             type: Object,
             notify: true
           },
@@ -156,7 +228,21 @@
             type: Object,
             notify: true
           },
+          _firebaseSpeakersRaw: {
+            type: Object,
+            notify: true
+          },
           _scheduleRaw : {
+            type: Object,
+            notify: true
+          },
+
+          _firebaseSchedule: {
+            type: Object,
+            notify: true
+          },
+
+          _firebaseSessions: {
             type: Object,
             notify: true
           },
@@ -189,12 +275,15 @@
               for (var k = 0, sessionsLen = timeslot.sessions.length; k < sessionsLen; k++) {
                 for (var l = 0, subSessionsLen = timeslot.sessions[k].length; l < subSessionsLen; l++) {
                   var session = this._getSession(timeslot.sessions[k][l], day, this._scheduleRaw);
-                  if (session && !session.track) {
-                    session.track = day.tracks[k];
+                  if (session) {
+                    if (!session.track) {
+                      session.track = day.tracks[k];
+                    }
+                    session.startTime = timeslot.startTime;
+                    session.endTime = subSessionsLen > 1 ? this._getEndTime(day.date, timeslot.startTime, timeslot.endTime, subSessionsLen, l + 1) : timeslot.endTime;
+                    session.dateReadable = day.dateReadable;
                   }
-                  session.startTime = timeslot.startTime;
-                  session.endTime = subSessionsLen > 1 ? this._getEndTime(day.date, timeslot.startTime, timeslot.endTime, subSessionsLen, l + 1) : timeslot.endTime;
-                  session.dateReadable = day.dateReadable;
+
                   this._scheduleRaw[i].timeslots[j].sessions[k][l] = session;
                 }
               }
@@ -206,7 +295,7 @@
         },
 
         _getSession: function (sessionId, day, schedule) {
-          var session = this.sessions[sessionId];
+          var session = this.sessions[sessionId] || this.sessions[sessionId.id];
           if (!session) {return;}
           session.mainTag = session.tags ? session.tags[0] : 'General';
 

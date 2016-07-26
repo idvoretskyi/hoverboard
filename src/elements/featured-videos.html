@@ -176,8 +176,9 @@
         ],
 
         _videosChanged: function () {
-          if (this.app.videos)
-          this._videos = this._randomOrder(this.app.videos).slice(0, 6);
+          if (this.app.videos && Object.keys(this.app.videos).length){
+            this._videos = this._randomOrder(this.app.videos).slice(0, 6);
+          }
         },
 
         _playVideo: function (e) {
