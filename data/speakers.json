@@ -42,7 +42,7 @@
         "name": "Yonatan Levin",
         "title": "Android Evangelist & Developer",
         "company": "Gett",
-        "companyLogo": "/images/logos/gett.png",
+        "companyLogo": "/images/logos/gett.svg",
         "country": "Tel Aviv, Israel",
         "photoUrl": "/images/people/yonatan_levin.jpg",
         "shortBio": "Born with the spirit of an entrepreneur, Yonatan loves to create, build and just do fun stuff in...",
@@ -148,7 +148,7 @@
         "name": "Adrian Kajda",
         "title": "Product Manager/Developer",
         "company": "Sygic",
-        "companyLogo": "/images/logos/sygic.png",
+        "companyLogo": "/images/logos/sygic.svg",
         "country": "Opole, Poland",
         "photoUrl": "/images/people/adrian_kajda.jpg",
         "shortBio": "Creator of Fuelio app. Fuelio was his hooby project started in 2012. Three years later the app wa...",
@@ -177,8 +177,8 @@
         "companyLogo": "/images/logos/angularzone.png",
         "country": "London, United Kingdom",
         "photoUrl": "/images/people/gerard_sans.jpg",
-        "shortBio": "Angular Google Developer Expert. International speaker and trainer.  Enjoy running AngularLabs London.",
-        "bio": "Angular Google Developer Expert. I am a Computer Science Engineer specialised in Web. International speaker and trainer. I am an Angular fanboy and a community activist fighting for the JavaScript revolution. I have lived and worked for all sorts of companies in Germany, Brazil, UK and Spain. I am always up for a good challenge. I enjoy running AngularLabs London, mentoring students, participating in the community, giving talks and writing technical articles at Medium.",
+        "shortBio": "Angular Google Developer Expert. International speaker and trainer.  Enjoy running AngularZone London.",
+        "bio": "Angular Google Developer Expert. I am a Computer Science Engineer specialised in Web. International speaker and trainer. I am an Angular fanboy and a community activist fighting for the JavaScript revolution. I have lived and worked for all sorts of companies in Germany, Brazil, UK and Spain. I am always up for a good challenge. I enjoy running AngularZone London, mentoring students, participating in the community, giving talks and writing technical articles at Medium.",
         "tags": [
             "Web",
             "Angular",
@@ -251,7 +251,7 @@
         "name": "Mateusz Herych",
         "title": "Android Tech Lead",
         "company": "IG",
-        "companyLogo": "/images/logos/ig.png",
+        "companyLogo": "/images/logos/ig.svg",
         "country": "Krakow, Poland",
         "photoUrl": "/images/people/mateusz_herych.jpg",
         "shortBio": "3x rockstar of DevFest Ukraine stage. Android GDE. Co-organizer of GDG Krakow.",
@@ -297,12 +297,12 @@
         "featured": "false",
         "name": "David Mayboroda",
         "title": "Android Engineer",
-        "company": "SoftServe",
-        "companyLogo": "/images/logos/softserve.svg",
+        "company": "Infopulse",
+        "companyLogo": "/images/logos/infopulse.svg",
         "country": "Kyiv, Ukraine",
         "photoUrl": "/images/people/david_mayboroda.jpg",
         "shortBio": "Ex Yandex emproyee. Android enthusiast.",
-        "bio": "Ex-Yandex emploee, currently Android Engineer at SoftServe.",
+        "bio": "Ex-Yandex employee, currently Android Engineer at SoftServe.",
         "tags": [
             "Android",
             "Dagger 2"
@@ -416,7 +416,7 @@
         "name": "Paul Lammertsma",
         "title": "CTO",
         "company": "Pixplicity",
-        "companyLogo": "/images/logos/pixplicity.png",
+        "companyLogo": "/images/logos/pixplicity.svg",
         "country": "Amsterdam, The Netherlands",
         "photoUrl": "/images/people/paul_lammertsma.jpg",
         "shortBio": "Paul is CTO and co-founder of Pixplicity, Holland's leading Android-specific consulting and app-b...",
@@ -452,7 +452,7 @@
         "name": "Aleksander Piotrowski",
         "title": "Code Monkey",
         "company": "Applause",
-        "companyLogo": "/images/logos/applause.png",
+        "companyLogo": "/images/logos/applause.svg",
         "country": "Warsaw, Poland",
         "photoUrl": "/images/people/aleksander_piotrowski.jpg",
         "shortBio": "Became a mobile developer after long run as a backend developer. Because of age, holding senior p...",
@@ -713,9 +713,9 @@
         "tags": [
             "Web",
             "AngularJS",
-            "ReactJS",
-            "NodeJS",
             "Progressive Web Apps",
+            "Push Notifications",
+            "App Shell",
             "RAIL"
         ],
         "badges": [
@@ -744,7 +744,7 @@
         "name": "Sergiy Mokienko",
         "title": "Android Team Lead",
         "company": "Leverate",
-        "companyLogo": "/images/logos/leverate.png",
+        "companyLogo": "/images/logos/leverate.svg",
         "country": "Kyiv,  Ukraine",
         "photoUrl": "/images/people/sergiy_mokienko.jpg",
         "shortBio": "Sergiy is an android developer that has experience from building apps from scratch to developing...",
@@ -784,7 +784,7 @@
         "name": "Valentyn Shybanov",
         "title": "Software Engineer/Country Manager",
         "company": "Wolters Kluwer",
-        "companyLogo": "/images/logos/wolterskluwer.svg",
+        "companyLogo": "/images/logos/wolters kluwer.svg",
         "country": "Kyiv, Ukraine",
         "photoUrl": "/images/people/valentyn_shybanov.jpg",
         "shortBio": "Google Developer Expert on Cloud. Co-organizer of GDG Kyiv-Center.",
@@ -793,7 +793,9 @@
             "Web",
             "AngularJS",
             "Polymer",
-            "Go"
+            "Go",
+            "Dart",
+            "Progressive Web Apps"
         ],
         "badges": [
             {
@@ -811,7 +813,7 @@
             {
                 "icon": "gplus",
                 "name": "Google+",
-                "link": "https://google.com/+ValentynShybanov"
+                "link": "https://plus.google.com/+ValentynShybanov"
             },
             {
                 "icon": "website",
@@ -826,7 +828,7 @@
         "name": "Michael Pustovit",
         "title": "Senior Android Developer",
         "company": "Stanfy",
-        "companyLogo": "/images/logos/stanfy.png",
+        "companyLogo": "/images/logos/stanfy.svg",
         "country": "Kyiv, Ukraine",
         "photoUrl": "/images/people/michael_pustovit.jpg",
         "shortBio": "Michael is a software engineer at Stanfy. He is KPI FICT Computer Science graduate and has 4+ yea...",
@@ -977,8 +979,8 @@
         "companyLogo": "/images/logos/yamert.png",
         "country": "Dnipro, Ukraine",
         "photoUrl": "/images/people/roman_herasymenko.jpg",
-        "shortBio": "Roman is Founder and CEO at Yamert and a co-organizer of GDG Dnipropetrovsk. Roman is interesting...",
-        "bio": "Roman is Founder and CEO at Yamert and a co-organizer of GDG Dnipropetrovsk. Roman is interesting in software development for cutting edge technologies and devices like Google Glass and Android Wear.",
+        "shortBio": "Roman is a technology geek, leading developer with 10+ years of experience, and a Google Develope...",
+        "bio": "Roman is a technology geek, leading developer with 10+ years of experience, and a Google Developer Expert on Android at Yamert company. He is skilled in building cutting-edge mobile apps, mainly developing for Android and wearable devices. \n\nFor the last three years Roman is a leader at GDG Dnipropetrovsk, where he had already organized a variety of local meet-ups, conferences and hackathons.",
         "tags": [
             "Android",
             "Firebase",
@@ -1063,6 +1065,125 @@
                 "icon": "linkedin",
                 "name": "LinkedIn",
                 "link": "https://linkedin.com/in/protechman"
+            }
+        ]
+    },
+    "38": {
+        "id": 38,
+        "featured": "false",
+        "name": "Professor Fortran",
+        "title": "",
+        "company": "Podcast",
+        "companyLogo": "/images/logos/podcast.png",
+        "country": "Lviv, Ukraine",
+        "photoUrl": "/images/people/professor_fortran.jpg",
+        "shortBio": "Professor Fortran is podcast about tech news and IT prepared in an easy and caual way. Check YouT...",
+        "bio": "Professor Fortran is podcast about tech news and IT prepared in an easy and caual way. Check YouTube channel to learn more.",
+        "tags": [
+            "IT",
+            "News",
+            "Podcast"
+        ],
+        "badges": [
+            
+        ],
+        "socials": [
+            {
+                "icon": "website",
+                "name": "Website",
+                "link": "https://www.youtube.com/channel/UCciDRJ4WVVjB-JtvGdRUm1Q"
+            },
+            {
+                "icon": "facebook",
+                "name": "Facebook",
+                "link": "https://www.facebook.com/fortranforthewin/"
+            }
+        ]
+    },
+    "39": {
+        "id": 39,
+        "featured": "true",
+        "name": "Matthew Mosesohn",
+        "title": "Senior Deployment Engineer",
+        "company": "Mirantis",
+        "companyLogo": "/images/logos/mirantis.svg",
+        "country": "Moscow, Russia",
+        "photoUrl": "/images/people/matthew_mosesohn.jpg",
+        "shortBio": "Matthew develops automated systems for deploying Kubernetes and Openstack. He has worked on autom...",
+        "bio": "Matthew develops automated systems for deploying Kubernetes and Openstack. He has worked on automating bare metal provisioning, configuration management, and HA systems. Matthew strives to keep configuration management minimal by pushing changes into core applications, as opposed to workarounds.",
+        "tags": [
+            "Cloud",
+            "Kebernetes",
+            "OpenStack"
+        ],
+        "badges": [
+            
+        ],
+        "socials": [
+            {
+                "icon": "github",
+                "name": "GitHub",
+                "link": "http://github.com/mattymo/"
+            },
+            {
+                "icon": "gplus",
+                "name": "Google+",
+                "link": "https://plus.google.com/+MatthewMosesohn"
+            }
+        ]
+    },
+    "37": {
+        "id": 37,
+        "featured": "false",
+        "name": "Dmytro Zaitsev",
+        "title": "Senior Android Developer",
+        "company": "Lohika Inc.",
+        "companyLogo": "/images/logos/lohika inc..svg",
+        "country": "Kyiv, Ukraine",
+        "photoUrl": "/images/people/dmytro_zaitsev.jpg",
+        "shortBio": "Dmytro is a Senior/Lead Mobile Developer at L\u00f3hika, specializing in developing Android apps. He l...",
+        "bio": "Dmytro is a Senior/Lead Mobile Developer at L\u00f3hika, specializing in developing Android apps. He loves learning new domains and creating big systems that are manageable and amenable to change. He's more than five years professionally engaged in developing mobile system-, multimedia-, business-, promo applications and social networks.",
+        "tags": [
+            "Android",
+            "Architecture"
+        ],
+        "badges": [
+            
+        ],
+        "socials": [
+            {
+                "icon": "facebook",
+                "name": "Facebook",
+                "link": "https://www.facebook.com/profile.php?id=1395787678"
+            }
+        ]
+    },
+    "40": {
+        "id": 40,
+        "featured": "false",
+        "name": "Michal Rostecki",
+        "title": "Software Engineer",
+        "company": "Mirantis",
+        "companyLogo": "/images/logos/mirantis.svg",
+        "country": "Poznan, Poland",
+        "photoUrl": "/images/people/michal_rostecki.jpg",
+        "shortBio": "Michal works as a Software Engineer at Mirantis. He codes in Golang and Python and is strong supp...",
+        "bio": "Michal works as a Software Engineer at Mirantis. He codes in Golang and Python and is strong supporter of open source. Currently a Kubernetes contributor, formerly an OpenStack contributor.",
+        "tags": [
+            "Cloud",
+            "Go",
+            "Python",
+            "Kubernetes",
+            "OpenStack"
+        ],
+        "badges": [
+            
+        ],
+        "socials": [
+            {
+                "icon": "github",
+                "name": "GitHub",
+                "link": "https://github.com/nhlfr"
             }
         ]
     }

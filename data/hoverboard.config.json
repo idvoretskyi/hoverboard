@@ -2,7 +2,7 @@
   "pages": {
     "home": {
       "headerSettings": {
-        "backgroundColor": "#607d8b",
+        "backgroundColor": "#607D8B",
         "backgroundImage": "/images/backgrounds/home.png",
         "fontColor": "#fff",
         "tabBarColor": "#fff",
@@ -99,10 +99,6 @@
       "title": "for-visitors",
       "links": [
         {
-          "text": "team",
-          "url": "/team/"
-        },
-        {
           "text": "cod",
           "url": "/cod/"
         },
@@ -147,6 +143,10 @@
   "contactBlock": {
     "links": [
       {
+        "text": "Team",
+        "url": "/team/"
+      },
+      {
         "text": "devfest@gdg.org.ua",
         "url": "mailto:devfest@gdg.org.ua"
       }
@@ -187,7 +187,7 @@
   "teamPageText": "team-page-text",
   "statistics": [
     {
-      "counter": 500,
+      "counter": 600,
       "caption": "attendees"
     },
     {
@@ -238,6 +238,7 @@
     }
   },
   "location": {
+    "apiKey": "AIzaSyDWy6O98n-ueoVaYPWRPve23vjm3JP08gw",
     "link": "https://www.facebook.com/expopivdennij",
     "pointer": {
       "latitude": 49.809841,

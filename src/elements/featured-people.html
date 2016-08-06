@@ -65,9 +65,9 @@
       }
 
       .company-logo {
+        margin: 5px auto;
         width: 80px;
         height: 20px;
-        transform: translate3d(0, -50%, 0);
       }
 
       @media (max-width: 600px) {
@@ -94,7 +94,7 @@
       <div class="people-wrapper">
         <template is="dom-repeat" items="[[featuredPeople]]" as="person">
           <a href="/speakers/[[person.id]]" class="person">
-            <div class="photo" style="background-image: url([[person.photoUrl]])"></div>
+            <iron-image class="photo" src="[[person.photoUrl]]" sizing="cover"></iron-image>
             <iron-image class="company-logo" src="{{person.companyLogo}}" sizing="contain"></iron-image>
             <h4 class="name">[[person.name]]</h4>
             <span class="company">[[person.country]]</span>
@@ -131,7 +131,7 @@
         },
 
         _peopleChanged: function () {
-          let people = this._toArray(this.people),
+          var people = this._toArray(this.people),
             filteredPeople = [];
           for (var i = 0; i < people.length; i++) {
             if (people[i].featured) {

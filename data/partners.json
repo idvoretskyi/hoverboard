@@ -35,7 +35,7 @@
       {
         "name": "Wolters Kluwer",
         "url": "http://wolterskluwer.com/",
-        "logoUrl": "/images/logos/wolterskluwer.svg"
+        "logoUrl": "/images/logos/wolters kluwer.svg"
       },
       {
         "name": "N-iX",
@@ -53,6 +53,16 @@
         "name": "DataArt",
         "url": "http://dataart.ua/",
         "logoUrl": "/images/logos/dataart.svg"
+      },
+      {
+        "name": "Zalando",
+        "url": "https://tech.zalando.de/",
+        "logoUrl": "/images/logos/zalando.svg"
+      },
+      {
+        "name": "Sigma",
+        "url": "http://sigma.software/",
+        "logoUrl": "/images/logos/sigma.svg"
       }
     ]
   },

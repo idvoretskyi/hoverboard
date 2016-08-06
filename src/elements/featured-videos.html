@@ -21,13 +21,17 @@
         background: var(--default-primary-color);
         color: var(--text-primary-color);
         --iron-icon-fill-color: var(--text-primary-color);
-        --paper-card-background-color: #FFFFFF;
+        --paper-card-background-color: #fff;
         overflow: hidden;
       }
 
       .videos-header {
         @apply(--layout-vertical);
         @apply(--layout-justified);
+      }
+
+      .heading {
+        line-height: 1.3;
       }
 
       .controls {
@@ -72,6 +76,7 @@
       .play-icon {
         --iron-icon-width: 48px;
         --iron-icon-height: 48px;
+        --iron-icon-fill-color: #fff;
       }
 
       .title {
@@ -88,7 +93,7 @@
       .block-link {
         margin-top: 25px;
         display: block;
-        color: inherit;
+        color: var(--text-primary-color);
         font-size: .9em;
       }
 
@@ -137,13 +142,13 @@
           </div>
         </template>
       </div>
-      <div>
+      <div layout>
         <a href="[[app.data.videosSessionsUrl]]" class="block-link" target="_blank">
           <paper-button>[[localize('featured-videos-view-all')]]</paper-button>
         </a>
       </div>
     </div>
-    <video-dialog id="videoViewer" title="[[_selectedVideo.title]]" youtube-id="[[_selectedVideo.youtubeId]]"
+    <video-dialog id="videoViewer" video-title="[[_selectedVideo.title]]" youtube-id="[[_selectedVideo.youtubeId]]"
                   entry-animation="scale-up-animation"
                   exit-animation="scale-down-animation" modal></video-dialog>
 
@@ -162,6 +167,11 @@
           HOVERBOARD.UtilsBehavior
         ],
 
+        listeners: {
+          'touchstart': '_onTouchStart',
+          'touchend': '_onTouchEnd'
+        },
+
         properties: {
           _videos: Array,
           _selectedVideo: Object,
@@ -174,6 +184,36 @@
         observers: [
           '_videosChanged(app.videos)'
         ],
+
+        _onTouchStart: function(e) {
+          var touchObj = e.changedTouches[0]
+          this.dist = 0;
+          this.startX = touchObj.pageX;
+          this.startY = touchObj.pageY;
+          this.nodeWidth = e.currentTarget.offsetWidth;
+        },
+
+        _onTouchEnd: function(e) {
+
+          //required min distance traveled to be considered swipe
+          this.threshold = this.nodeWidth / 4;
+          // maximum distance allowed at the same time in perpendicular direction
+          this.restraint = 100;
+          var touchObj = e.changedTouches[0]
+          // get horizontal dist traveled by finger while in contact with surface;
+          this.distX = touchObj.pageX - this.startX;
+          // get vertical dist traveled by finger while in contact with surface
+          this.distY = touchObj.pageY - this.startY;
+
+          if (Math.abs(this.distX) >= this.threshold && Math.abs(this.distY) <= this.restraint){
+            if (this.distX > 0) {
+              this.shiftContentLeft();
+            }
+            else  {
+              this.shiftContentRight();
+            }
+          }
+        },
 
         _videosChanged: function () {
           if (this.app.videos && Object.keys(this.app.videos).length){
